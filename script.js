@@ -99,8 +99,12 @@ function parseEncodedMessage(message) {
 function parsePrefixInput() {
     const raw = prefixInput.value.trim();
     if (!raw) return '';
-    if (raw.toUpperCase().startsWith('U+')) {
-        const hex = raw.slice(2);
+    let value = raw;
+    if (/^[0-9a-fA-F]+$/.test(raw)) {
+        value = 'U+' + raw;
+    }
+    if (value.toUpperCase().startsWith('U+')) {
+        const hex = value.slice(2);
         const cp = parseInt(hex, 16);
         if (!isNaN(cp)) return String.fromCodePoint(cp);
     }

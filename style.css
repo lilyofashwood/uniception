@@ -46,3 +46,27 @@ textarea, input, select {
 textarea#result {
     height: 6rem;
 }
+
+.prefix-field {
+    display: flex;
+    align-items: center;
+}
+
+.prefix-label {
+    background: #222;
+    border: 1px solid #555;
+    border-right: none;
+    color: #eee;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.prefix-field input {
+    flex: 1;
+    width: auto;
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}

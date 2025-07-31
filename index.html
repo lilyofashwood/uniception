@@ -29,7 +29,10 @@
     </select>
 
     <label for="prefix-input">Visible Unicode Symbol</label>
-    <input id="prefix-input" type="text" placeholder="U+____">
+    <div class="prefix-field">
+        <span class="prefix-label">U+</span>
+        <input id="prefix-input" type="text" placeholder="0000">
+    </div>
 
     <textarea id="result" placeholder="Final encoded/decoded output displayed here" readonly></textarea>
 
