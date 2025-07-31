@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uniception</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Uniception</h1>
+    <div class="controls">
+        <button id="encode-btn">Encode 🌹</button>
+        <button id="decode-btn">Decode 🥀</button>
+    </div>
+
+    <div id="encode-area" class="input-area">
+        <textarea id="encode-input" placeholder="Enter your love letter here..."></textarea>
+    </div>
+    <div id="decode-area" class="input-area" style="display:none;">
+        <textarea id="decode-input" placeholder="Paste your hidden poetry here..."></textarea>
+    </div>
+
+    <label for="cipher-select">Cipher</label>
+    <select id="cipher-select">
+        <option>Hex Whisper (default)</option>
+        <option>Octal Poetry</option>
+        <option>Quaternary Verse</option>
+        <option>Binary Breath</option>
+    </select>
+
+    <label for="prefix-input">Visible Unicode Symbol</label>
+    <input id="prefix-input" type="text" placeholder="U+____">
+
+    <textarea id="result" placeholder="Final encoded/decoded output displayed here" readonly></textarea>
+
+    <script src="script.js"></script>
+</body>
+</html>

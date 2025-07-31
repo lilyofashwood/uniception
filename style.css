@@ -1,0 +1,48 @@
+body {
+    background: #111;
+    color: #eee;
+    font-family: "Georgia", serif;
+    margin: 0;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.controls {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+button {
+    background: #222;
+    border: 1px solid #555;
+    color: #eee;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #333;
+}
+
+.input-area {
+    margin-bottom: 1rem;
+}
+
+textarea, input, select {
+    width: 100%;
+    background: #222;
+    border: 1px solid #555;
+    color: #eee;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+textarea#result {
+    height: 6rem;
+}
