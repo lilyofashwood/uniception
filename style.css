@@ -52,12 +52,9 @@ textarea#result {
     align-items: center;
 }
 
+
 .prefix-label {
-    background: #222;
-    border: 1px solid #555;
-    border-right: none;
-    color: #eee;
-    padding: 0.5rem;
+    margin-right: 0.5rem;
     margin-top: 0.25rem;
     margin-bottom: 1rem;
 }
@@ -67,6 +64,4 @@ textarea#result {
     width: auto;
     margin-top: 0.25rem;
     margin-bottom: 1rem;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
 }
