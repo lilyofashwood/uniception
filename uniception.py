@@ -27,20 +27,42 @@ from typing import Dict, List, Tuple
 # base‑1.
 cipher_codepoints: Dict[str, List[str]] = {
     "Hex Whisper (base16)": [
-        "U+200B", "U+200C", "U+200D", "U+2060",
-        "U+2009", "U+200A", "U+202F", "U+205F",
-        "U+2061", "U+2062", "U+2063", "U+2064",
-        "U+2002", "U+2004", "U+2005", "U+2006",
+        "U+200B",
+        "U+200C",
+        "U+200D",
+        "U+2060",
+        "U+2009",
+        "U+200A",
+        "U+202F",
+        "U+205F",
+        "U+2061",
+        "U+2062",
+        "U+2063",
+        "U+2064",
+        "U+2002",
+        "U+2004",
+        "U+2005",
+        "U+2006",
     ],
     "Octal Poetry (base8)": [
-        "U+200B", "U+200C", "U+200D", "U+2060",
-        "U+2009", "U+200A", "U+202F", "U+205F",
+        "U+200B",
+        "U+200C",
+        "U+200D",
+        "U+2060",
+        "U+2009",
+        "U+200A",
+        "U+202F",
+        "U+205F",
     ],
     "Quaternary Verse (base4)": [
-        "U+200B", "U+200C", "U+200D", "U+2060",
+        "U+200B",
+        "U+200C",
+        "U+200D",
+        "U+2060",
     ],
     "Binary Breath (base2)": [
-        "U+200B", "U+200C",
+        "U+200B",
+        "U+200C",
     ],
 }
 
@@ -177,7 +199,7 @@ def choose_cipher() -> str:
         print(f"  {idx}. {name}")
     while True:
         choice = input("Pick your cipher by number (or 'q' to cancel): ").strip()
-        if choice.lower().startswith('q'):
+        if choice.lower().startswith("q"):
             return ""
         if choice.isdigit():
             num = int(choice)
@@ -237,7 +259,9 @@ def interactive() -> None:
                 continue
             encoded_data = encode_bytes(message.encode("utf-8"), cipher_name)
             full = prefix + BOUNDARY + encoded_data + BOUNDARY
-            print("\nHere is your encoded masterpiece. Paste it anywhere and relish the confusion it brings:")
+            print(
+                "\nHere is your encoded masterpiece. Paste it anywhere and relish the confusion it brings:"
+            )
             print(full)
         elif choice == "2":
             cipher_name = choose_cipher()
@@ -259,10 +283,14 @@ def interactive() -> None:
             except Exception as exc:
                 print(f"\nOops! Something went wrong while decoding: {exc}")
         elif choice == "3":
-            print("Leaving already? Fine. Go, and remember: the best secrets live between the word joiners.")
+            print(
+                "Leaving already? Fine. Go, and remember: the best secrets live between the word joiners."
+            )
             break
         else:
-            print("That wasn't 1, 2 or 3. Try again, and maybe pay attention this time.")
+            print(
+                "That wasn't 1, 2 or 3. Try again, and maybe pay attention this time."
+            )
 
 
 if __name__ == "__main__":
