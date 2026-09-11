@@ -1,0 +1,176 @@
+spec:
+  id: "steg.web.two-plains.corridor-lamp"
+  title: "Two Plains / Corridor Lamp"
+  version: "1.0.0"
+  status: "preserved experimental art specification"
+  date: "2026-07-18"
+
+provenance:
+  cipher_system:
+    name: "steg.web"
+    mode: "two_plains"
+    creator: "Lily of Ashwood"
+    year: 2026
+  carrier_example:
+    working_title: "Corridor Lamp"
+    development: "Generated collaboratively under Lily's design direction."
+  authorship_note: >-
+    Lily of Ashwood designed the steg.web system and the Two Plains mode.
+    The preserved microfiction carrier was generated during a collaborative
+    experiment in which Lily specified the artistic and steganographic goals.
+
+intent:
+  primary: >-
+    Hide a second textual channel inside visually ordinary prose by rendering
+    selected letters in Mathematical Sans-Serif Regular while leaving all
+    other Latin letters in ASCII.
+  artistic: >-
+    Create readable literature whose visible narrative remains complete while
+    a second message travels through near-identical Unicode letterforms.
+  non_goal: >-
+    This is steganographic art, not cryptographic protection. Code-point
+    inspection can reveal the payload.
+
+cipher_layer:
+  family: "Unicode font-split steganography"
+  channel_count: 2
+
+  alphabets:
+    base:
+      name: "ASCII Latin"
+      uppercase_start: "U+0041"
+      lowercase_start: "U+0061"
+      role: "ordinary carrier letters"
+    payload:
+      name: "Mathematical Sans-Serif Regular"
+      uppercase_start: "U+1D5A0"
+      lowercase_start: "U+1D5BA"
+      role: "secret-channel letters"
+
+  visual_invariant: >-
+    Base and payload letters should appear nearly identical at normal reading
+    size. The cover text must remain semantically and grammatically intact.
+
+  payload_normalization:
+    remove_whitespace: true
+    case_sensitive_matching: false
+    preserve_cover_case: true
+    allowed_payload_characters: "ASCII A-Z and a-z"
+
+  placement:
+    strategy: "ordered subsequence"
+    definition: >-
+      For each payload letter, locate a matching carrier letter appearing
+      later than the previous selected position. Mark that position as payload.
+    preferred_density:
+      visible_characters_per_payload_letter:
+        minimum: 8
+        ideal_minimum: 10
+        ideal_maximum: 18
+      guidance: >-
+        Sparse placement produces more natural prose and reduces visible
+        clustering. Rewrite the carrier rather than forcing awkward positions.
+    selection_preferences:
+      - "Distribute payload letters across clauses and sentences."
+      - "Avoid long runs of adjacent payload characters."
+      - "Prefer ordinary high-frequency words as hosts."
+      - "Do not alter punctuation, spacing, or visible wording to signal the payload."
+
+  encoding:
+    rule: >-
+      At every selected payload position, map the ASCII letter to the
+      corresponding Mathematical Sans-Serif Regular code point. Leave all
+      unselected characters unchanged.
+    uppercase_formula: "U+1D5A0 + (ASCII_letter - 'A')"
+    lowercase_formula: "U+1D5BA + (ASCII_letter - 'a')"
+
+  decoding:
+    rule: >-
+      Scan left to right. Every Mathematical Sans-Serif Regular Latin letter
+      contributes its normalized ASCII equivalent to the secret message.
+      Convert the same character back to ASCII to reconstruct the visible
+      plaintext.
+    output_fields:
+      - "plaintext"
+      - "secret"
+
+  validation:
+    required:
+      - "decoded.secret equals normalized payload"
+      - "decoded.plaintext equals original carrier text"
+      - "encoded text preserves punctuation and whitespace"
+      - "no payload character lies outside the declared alphabet range"
+
+carrier_art_profile:
+  id: "quiet-uncanny-microfiction"
+  working_title: "Corridor Lamp"
+  purpose: >-
+    Produce a plain-looking prose carrier whose literary surface is compelling
+    enough that Unicode variation reads as ordinary typography rather than a puzzle.
+
+  voice:
+    register: "restrained literary prose"
+    temperature: "quiet, precise, faintly uncanny"
+    exposition: "minimal"
+    emotional_method: "implication rather than explanation"
+
+  structural_pattern:
+    - beat: 1
+      function: "Establish a concrete, ordinary location."
+    - beat: 2
+      function: "Introduce one physically modest impossibility."
+    - beat: 3
+      function: "Place a written instruction or artifact inside the scene."
+    - beat: 4
+      function: "End on a small mechanical or sensory event."
+    - beat: 5
+      function: "Do not explain the anomaly."
+
+  lexical_guidance:
+    preferred:
+      - "corridor"
+      - "lamp"
+      - "office"
+      - "ledger"
+      - "amber"
+      - "radiator"
+      - "patient"
+      - "remembered"
+    avoid:
+      - "overt horror exposition"
+      - "technical discussion of the cipher inside the story"
+      - "excessive adjectives"
+      - "a final sentence that resolves the mystery"
+
+  generation_constraints:
+    - "The carrier must contain the normalized payload as an ordered letter subsequence."
+    - "The story must remain independently worthwhile without the hidden message."
+    - "Selected payload positions should cross multiple words and sentences."
+    - "Prefer a length of roughly 10-18 visible characters per payload character."
+    - "After drafting, verify positions programmatically; rewrite on failure."
+
+reference_example:
+  payload: "thedoorremembers"
+  carrier_plaintext: >-
+    At the end of the corridor, Mara found a lamp burning in an empty office. The building had been closed for years, yet the bulb gave off a patient amber light. On the desk lay a maintenance ledger with one fresh line: Please return what the walls remembered. She read it twice before the radiator clicked behind her.
+  encoded_text: >-
+    A𝗍 t𝗁𝖾 en𝖽 𝗈f the c𝗈𝗋𝗋idor, Mara found a lamp burning in an 𝖾𝗆pty offic𝖾. The building had been closed for years, yet the bulb gave off a patient a𝗆𝖻𝖾𝗋 light. On the de𝗌k lay a maintenance ledger with one fresh line: Please return what the walls remembered. She read it twice before the radiator clicked behind her.
+  expected_decode:
+    plaintext: >-
+      At the end of the corridor, Mara found a lamp burning in an empty office. The building had been closed for years, yet the bulb gave off a patient amber light. On the desk lay a maintenance ledger with one fresh line: Please return what the walls remembered. She read it twice before the radiator clicked behind her.
+    secret: "thedoorremembers"
+
+future_ai_instructions: |-
+  Treat this file as an executable design contract.
+
+  To create a new work:
+    1. Accept a payload and an artistic carrier profile.
+    2. Normalize the payload by removing whitespace.
+    3. Draft natural carrier text that contains every payload letter in order.
+    4. Find sparse ordered positions for the payload.
+    5. Encode only those positions with Mathematical Sans-Serif Regular.
+    6. Decode the result and verify exact round-trip equality.
+    7. Return the encoded artwork, plaintext carrier, payload, and validation report.
+
+  Never claim visual invisibility without inspecting the actual rendered result
+  on the target interface. Preserve the complete visible text as meaningful art.

@@ -1,0 +1,20 @@
+.DS_Store
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+.venv/
+node_modules/
+output/
+*.log
+# Exact private originals remain locally and in the dated source archive.
+historical/stegweb-suite.py
+historical/stegweb-from-pdf.py
+variants/snowline-mirrorfall/index.html
+variants/snowline-mirrorfall/historical/
+variants/snowline-mirrorfall/README.md
+variants/snowline-mirrorfall/INTEGRATION.md
+variants/snowline-mirrorfall/source-manifest.json
+variants/snowline-mirrorfall/tests/core.test.mjs
+variants/snowline-mirrorfall/package.json

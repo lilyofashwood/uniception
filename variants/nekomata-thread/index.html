@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Nekomata thread · Uniception</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+<main>
+  <header>
+    <a href="../../index.html">Return to Uniception</a>
+    <p class="eyebrow">猫又 · a second shape at the window</p>
+    <h1 aria-label="Nekomata thread"><span>Nekomata thread</span></h1>
+    <p>Eight lines. Three ways to weave them. The poem stays itself; the selected letters wait between its fonts.</p>
+  </header>
+
+  <section aria-labelledby="reading-title">
+    <h2 id="reading-title">Turn the thread</h2>
+    <div class="modes" role="group" aria-label="Source font mode">
+      <button type="button" data-mode="v1" aria-pressed="true">Two bolds</button>
+      <button type="button" data-mode="chaos_noodle" aria-pressed="false">Chaos noodle</button>
+      <button type="button" data-mode="aesthetic" aria-pressed="false">Aesthetic reveal</button>
+    </div>
+    <p id="mode-description"></p>
+    <div class="poem-shell">
+      <div class="thread-mark" aria-hidden="true">⟡ · 🕸 · ⟡</div>
+      <div id="poem" data-literal aria-label="Exact encoded poem"></div>
+      <p class="sr-only" id="accessible-poem" data-literal></p>
+    </div>
+    <p class="literal-note">The poem above is literal cipher data. Its plain letters and source font choices are intentional; interface decoration never enters that channel.</p>
+    <div class="actions">
+      <button type="button" id="decode">Decode the actual text</button>
+      <button type="button" id="veil" class="secondary" disabled>Veil the reveal</button>
+      <button type="button" id="copy" class="secondary">Copy exact poem</button>
+    </div>
+    <p id="status" role="status" aria-live="polite"></p>
+    <div id="reveal" hidden>
+      <h3>What the thread carries</h3>
+      <output id="secret" data-literal aria-label="Literal decoded payload"></output>
+      <p>These letters come from the selected font channel, read by the same local decoder as the workshop. No model call and no hidden script supply the answer.</p>
+    </div>
+  </section>
+
+  <section>
+    <details>
+      <summary>Inspect the exact wire</summary>
+      <p>The selectable text below is byte-for-byte the supplied specimen for this mode, checked against the current encoder. Copying it keeps its source glyphs.</p>
+      <label for="wire">Exact encoded text</label>
+      <textarea id="wire" readonly rows="9" spellcheck="false" aria-label="Exact encoded text" data-literal></textarea>
+      <h3>Local decoding receipt</h3>
+      <pre id="receipt" data-literal aria-label="Literal verification receipt"></pre>
+    </details>
+  </section>
+
+  <footer>
+    <p>A supplied literary specimen, credited in its source to Lily of Ashwood, with the signature “woven by the nekomata.” Adapted for the local workshop in September 2026.</p>
+    <p>The original words, positions and three encoded font arrays are retained. Exact extraction is verified; no claim of confidentiality or invisible rendering is made. Ornamental headings borrow voices from Font Garden.</p>
+  </footer>
+</main>
+</body>
+</html>
