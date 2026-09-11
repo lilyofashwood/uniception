@@ -29,3 +29,11 @@ footer{border-top:1px solid var(--line);padding-top:16px;font-size:.82rem}
 [hidden]{display:none!important}
 @media(max-width:480px){main{padding:25px 16px}.poem-shell{padding:18px 10px}.modes button{flex:1 1 140px}.actions button{width:100%}#poem{font-size:1rem;line-height:2.2}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+/* The supplied poem keeps its exact fonts; only its surrounding thread is dressed. */
+body{background:radial-gradient(ellipse at 80% 0,#44233877,transparent 36rem),linear-gradient(155deg,#0c0b11,#17101d 65%,#101018)}
+header{border-bottom:1px solid #75516a;margin-bottom:10px;position:relative;padding-bottom:30px}
+header::after{content:"⟡";position:absolute;right:12px;bottom:-16px;color:#e3c7a0;background:#110c17;padding:0 12px;font-size:22px}
+h1{color:#f1dfce;line-height:1.4}h2,h3,summary{color:#e9c999}
+.poem-shell{border-color:#86607a;background:linear-gradient(130deg,#241824a6,#0d0d15);box-shadow:inset 0 0 0 5px #140e1980,0 18px 42px #00000026;border-radius:14px}
+button{min-height:45px}button[aria-pressed=true]{color:#ffe8c6;border-color:#e5c58f;background:linear-gradient(120deg,#503143,#35263e)}
+#reveal{border-color:#d1a3bd;background:linear-gradient(100deg,#38253966,#16121e);border-radius:0 8px 8px 0}

@@ -3,3 +3,28 @@
 header,section p,details p,summary,h2,label,button,footer{overflow-wrap:anywhere}
 button:disabled{cursor:not-allowed}input:disabled,select:disabled{opacity:.6;cursor:not-allowed}
 #adapter-status{border-left:2px solid var(--accent);padding-left:12px}
+
+/* Night-garden workshop: warm thread on ink. Decoration never enters the wire. */
+:root{--bg:#0c0b10;--panel:#15131c;--ink:#eee3d4;--muted:#c0b2c2;--accent:#e8bf87;--line:#4f3b50}
+body{background:radial-gradient(ellipse at 85% 0,#39203880,transparent 40rem),radial-gradient(ellipse at 0 45rem,#33231955,transparent 38rem),var(--bg)}
+main{max-width:1040px;padding-top:46px}
+header{position:relative;padding:26px 0 52px;border-bottom:1px solid #79545b;margin-bottom:34px}
+header::before{content:"";display:block;width:88px;height:14px;margin-bottom:28px;background:linear-gradient(12deg,transparent 42%,#ba8492 45%,#ba8492 49%,transparent 52%),linear-gradient(-12deg,transparent 42%,#e8bf87 45%,#e8bf87 49%,transparent 52%)}
+header::after{content:"⟡";position:absolute;right:8px;bottom:-17px;padding:0 14px;color:var(--accent);background:var(--bg);font-size:24px}
+.eyebrow{letter-spacing:.09em;line-height:2}h1{color:#f5e1c7;letter-spacing:-.03em;text-shadow:0 0 38px #b471581f}h1 span{letter-spacing:0;color:#d7b6c9}
+header>p:not(.eyebrow){max-width:760px}h2,h3,summary{color:#ecd1a9}
+section,details{background:linear-gradient(125deg,#1d1620b8,#111016ed);border:1px solid var(--line);border-radius:14px;padding:30px;box-shadow:inset 0 1px #efce9510,0 14px 34px #00000020}
+section:focus-within,details:focus-within{border-color:#a07882}
+textarea,input,select,pre{background:#0d0c12;border-color:#6f546e;color:var(--ink)}
+textarea,input,select{border-radius:7px}select{font-family:Georgia,serif;line-height:1.7}
+button{background:linear-gradient(125deg,#e5bd86,#d59d84);border-color:#edc992;border-radius:7px;min-height:45px;color:#20151b}
+button.secondary{background:#251b2b;color:#efdcdb;border-color:#896679}
+button:not(:disabled):hover{box-shadow:0 0 0 1px #e8bf87,0 4px 20px #8e576b33}
+button:focus-visible,a:focus-visible,summary:focus-visible,textarea:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #efd5a6;outline-offset:4px}
+label{color:#d1c1cd}a{text-underline-offset:.24em}summary{line-height:1.6}
+#variants{border-left:2px solid #bd889d}#variants>a{display:block;padding:13px 16px;border:1px solid #735166;border-radius:7px;background:linear-gradient(95deg,#3b2536,#1a151f);text-decoration:none;line-height:1.8}
+#variants>a:hover{border-color:#e8bf87;background:#392634}
+pre[data-interface]{border-left-color:#d398b6;background:linear-gradient(90deg,#30202d,#17131d);font-family:Georgia,serif;font-size:15px}
+footer{border-top:1px solid #573c50;margin-top:40px;padding-top:28px;color:#c4a8bd}
+@media(max-width:640px){main{padding:24px 15px}header{padding:20px 0 34px;margin-bottom:26px}section,details{padding:21px 17px}h1{font-size:clamp(34px,9.5vw,54px)}h2{font-size:24px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

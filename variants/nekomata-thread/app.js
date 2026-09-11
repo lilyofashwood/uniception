@@ -1,4 +1,4 @@
-import {letterInterface,letterText} from '../../lettering.js';
+import {letterInterface,showInterfaceMessage,interfaceChoice} from '../../lettering.js';
 import {CARRIER,weave,inspect} from './specimen.js';
 
 const $=id=>document.getElementById(id);
@@ -7,8 +7,8 @@ const descriptions={
   chaos_noodle:'Four fonts follow the vowels. Plain consonants belong to the source carrier; the secret takes a different path.',
   aesthetic:'Plain source letters carry the poem. Sans-serif bold makes the selected thread easier to see.',
 };
-let mode='v1';
-function status(message){$('status').textContent=letterText(message);}
+let mode=interfaceChoice(location.search,'mode',Object.keys(descriptions),'v1');
+function status(message){showInterfaceMessage($('status'),message);}
 function paint(encoded,positions=[]){
   const selected=new Set(positions),fragment=document.createDocumentFragment();
   [...encoded].forEach((glyph,index)=>{

@@ -33,6 +33,9 @@ const {pathToFileURL}=require('node:url');
     for(const viewport of [{width:1365,height:950},{width:390,height:844}]){
       await page.setViewportSize(viewport);await page.goto(base+prefix+'index.html');
       await page.waitForFunction(()=>document.querySelector('#wire').value.length>0);
+      assert.doesNotMatch(await page.title(),/[A-Za-z]/);
+      assert.doesNotMatch(await page.locator('#status').textContent(),/[A-Za-z]/);
+      assert.match(await page.locator('#status').getAttribute('aria-label'),/Source glyphs/);
       await page.getByRole('heading',{name:'Nekomata thread',exact:true}).waitFor();
       for(const mode of MODES){
         await page.locator('[data-mode="'+mode+'"]').click();
@@ -91,6 +94,14 @@ const {pathToFileURL}=require('node:url');
     await page.locator('[data-mode="chaos_noodle"]').click();
     await page.getByRole('button',{name:'Decode the actual text',exact:true}).click();
     assert.equal(await page.locator('#secret').textContent(),'iwasalwayshere');
+    for(const requested of [...MODES,'unknown','__proto__']){
+      await page.goto(base+prefix+'index.html?mode='+requested);
+      await page.waitForFunction(()=>document.querySelector('#wire').value.length>0);
+      const expected=MODES.includes(requested)?requested:'v1';
+      assert.equal(await page.locator('#wire').inputValue(),SOURCE_WIRES[expected]);
+      assert.equal(await page.locator('[aria-pressed="true"]').getAttribute('data-mode'),expected);
+      assert.equal(await page.locator('#reveal').isVisible(),false);
+    }
     assert.deepEqual(errors,[]);assert.ok(requests.every(url=>new URL(url).origin===base));
     assert.ok(requests.every(url=>!url.includes('/api/')));
     console.log('PASS: desktop/mobile, three exact source modes, stale receipt invalidation, true altered-wire decoding, rejection, reduced motion, exact clipboard, no editable ASCII prose/overflow/page errors/external calls.');

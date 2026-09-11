@@ -1,8 +1,9 @@
 import {capacity,encode,decode,encodeMirrorfall,decodeMirrorfall} from './core.js';
 import {specimen} from './specimen.js';
-import {letterInterface,letterText} from '../../lettering.js';
+import {letterInterface,letterText,interfaceChoice} from '../../lettering.js';
 
 const $=id=>document.getElementById(id);
+$('traversal').value=interfaceChoice(location.search,'traversal',['mirrorfall','linear'],'mirrorfall');
 const mode=()=> $('traversal').value==='mirrorfall' ? {encode:encodeMirrorfall,decode:decodeMirrorfall} : {encode,decode};
 function status(message){$('status').textContent=letterText(message);$('status').setAttribute('aria-label',message);}
 function measure(){

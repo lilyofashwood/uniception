@@ -1,6 +1,7 @@
 import {legacyEncode,legacyDecode,bytesEncode,bytesDecode,requiredLetters,wrapRegion,decodeRegions} from './core.js';
-import {letterInterface,letterText} from './lettering.js';
+import {letterInterface,letterText,showInterfaceMessage,showLiteralResult,interfaceChoice} from './lettering.js';
 const $=id=>document.getElementById(id);
+for(const id of ['format','mode'])$(id).value=interfaceChoice(location.search,id,[...$(id).options].map(option=>option.value),$(id).value);
 // This marker is injected only into the adapter's root page. No probe or provider call.
 const localAdapter=/^http:\/\/127\.0\.0\.1(?::\d+)?$/.test(location.origin)&&document.querySelector('meta[name="uniception-local-adapter"]')?.content==='v1';
 const providerControls=['provider','model','endpoint','key','tokens','compose','interpret'];
@@ -8,7 +9,11 @@ for(const id of providerControls)$(id).disabled=!localAdapter;
 $('adapter-status').textContent=localAdapter?'Local adapter connected. Model calls happen only when you choose a model action.':'Static preview: model actions and key entry are disabled. Start the local service for provider access; weaving and decoding work here.';
 // Public variant links contain only cleared synthetic specimens. No probe or model call.
 function config(){return {provider:$('provider').value,model:$('model').value,endpoint:$('endpoint').value,key:$('key').value,maxTokens:Number($('tokens').value)};}
-function show(value,target='receipt'){$(target).textContent=typeof value==='string'?value:JSON.stringify(value,null,2);}
+function show(value,target='receipt'){
+  if(typeof value==='string')showInterfaceMessage($(target),value);
+  else showLiteralResult($(target),value);
+}
+show($('receipt').textContent);show($('model-result').textContent,'model-result');
 function run(fn){try{fn();}catch(e){show('Rejected: '+e.message);}}
 function capacity(){try{$('capacity').textContent=letterText($('format').value==='legacy'?'Historical mode removes payload whitespace and preserves the carrier’s letter case.':`Exact case, whitespace and Unicode. Requires ${requiredLetters($('payload').value)} ASCII carrier letters.`);}catch(e){$('capacity').textContent=letterText(e.message);}}
 function encode(){const fn=$('format').value==='legacy'?legacyEncode:bytesEncode;const result=fn($('carrier').value,$('payload').value,$('mode').value);$('encoded').value=wrapRegion(result.encoded,$('format').value,$('mode').value);const {encoded,...receipt}=result;show(receipt);return receipt;}

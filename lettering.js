@@ -294,19 +294,38 @@ export function letterText(text,register='chaos-noodle-ii'){
   if(!UI_REGISTERS.includes(register))throw new Error('Unknown interface register.');
   return garden.apply(register,text.replace(/[A-Z]/g,c=>c.toLowerCase()));
 }
+// A live region can contain either interface prose or literal recovered data.
+// Mark that distinction when rendering, not from its tag or ARIA role.
+export function showInterfaceMessage(element,message){
+  element.removeAttribute('data-literal');
+  element.dataset.interface='message';
+  element.textContent=letterText(message);
+  element.setAttribute('aria-label',message);
+}
+export function showLiteralResult(element,value){
+  element.removeAttribute('data-interface');
+  element.removeAttribute('aria-label');
+  element.setAttribute('data-literal','');
+  element.textContent=typeof value==='string'?value:JSON.stringify(value,null,2);
+}
+// Landing links choose a known interface preset only. Never read payloads or keys.
+export function interfaceChoice(search,name,choices,fallback){
+  const requested=new URLSearchParams(search).get(name);
+  return choices.includes(requested)?requested:fallback;
+}
 export function letterInterface(root=document){
   const headings=[...root.querySelectorAll('h2,summary,h3')];
-  const body=[...root.querySelectorAll('header p,header h1 span,section p:not([aria-live]),details p,label,button,option,footer,a')];
+  const body=[...root.querySelectorAll('header p,header h1 span,section p,details p,label,button,option,footer,a')];
   const entries=[...headings.map((el,i)=>[el,UI_REGISTERS[1+i%(UI_REGISTERS.length-1)]]),...body.map(el=>[el,'chaos-noodle-ii'])];
   for(const [element,register] of entries){
-    if(element.closest('pre,code,textarea,input,[data-literal],[aria-live],.variant-accessible'))continue;
+    if(element.closest('pre,code,textarea,input,[data-literal],.variant-accessible'))continue;
     const label=[...element.childNodes].filter(n=>n.nodeType===3).map(n=>n.nodeValue).join(' ').trim();
     if(label&&!element.hasAttribute('aria-label')&&element.matches('h2,h3,summary,button,a'))element.setAttribute('aria-label',label.normalize('NFKC'));
     if(label&&element.matches('label'))for(const control of element.querySelectorAll('input,textarea,select'))control.setAttribute('aria-label',label.normalize('NFKC'));
     const walker=element.ownerDocument.createTreeWalker(element,4);
     const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
     for(const node of nodes){
-      if(node.parentElement.closest('pre,code,textarea,input,[data-literal],[aria-live],.variant-accessible'))continue;
+      if(node.parentElement.closest('pre,code,textarea,input,[data-literal],.variant-accessible'))continue;
       node.nodeValue=letterText(node.nodeValue,register);
     }
     element.dataset.gardenRegister=register;
@@ -314,4 +333,5 @@ export function letterInterface(root=document){
   for(const input of root.querySelectorAll('input[placeholder]')){
     if(!/^(?:https?:|\/|[A-Z_]+$)/.test(input.placeholder))input.placeholder=letterText(input.placeholder);
   }
+  if(root.nodeType===9)root.title=letterText(root.title);
 }
