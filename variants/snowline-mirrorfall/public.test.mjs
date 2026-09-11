@@ -44,5 +44,5 @@ test('public demo has external self-only assets and leaves encoded data out of p
   assert.ok(html.includes('src="demo.js"'));assert.ok(html.includes('href="demo.css"'));
   assert.ok(!/<script(?![^>]*src=)[^>]*>/i.test(html));assert.ok(!html.includes('<style>'));
   assert.ok(html.includes('id="artwork" data-literal'));assert.ok(html.includes('id="recovered" data-literal'));
-  assert.ok(html.includes('new synthetic text'));assert.ok(!html.includes('src="http'));
+  assert.ok(html.includes('A new lantern poem carries the recovered'));assert.ok(!html.includes('src="http'));
 });

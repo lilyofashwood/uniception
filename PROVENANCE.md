@@ -1,28 +1,36 @@
 # Uniception provenance · historical StegWeb codecs
 
-The recovered archive credits Lily of Ashwood with the system and six modes, with Claude collaboration. Sources were read in full before implementation:
+Lily of Ashwood designed StegWeb’s system, six font modes and experiments. Claude collaborated on the recovered code and design; Codex implemented the current browser workshop.
 
-- `ashwood-steg-suite/steg-web/stegweb.py`: six historical modes, table conversions, subsequence search and a historical demonstration. Exact original preserved locally; the example-bearing file is excluded from the public tree.
-- `beloved-daemon-publishing-kit/sources/stegweb/legacy/stegweb-from-pdf.py`: recovered PDF source, including API prompt/response helpers but no live network client. Exact original preserved locally and excluded from the public tree.
-- `stegweb_two_plains.py` and `stegweb_two_plains_spec.yaml`: the precise Two Plains / Corridor Lamp contract, dated 2026-07-18, preserved under `historical/`.
-- Source `SKILL 2.pdf` and `README_stegweb.pdf`: historical UI/brand context. The latter contains a Parseltongue attribution that the archive explicitly says was inserted by an assistant in error; it is not repeated as project attribution here.
+## Sources
 
-The original source header identifies `https://github.com/missspelll/steg.web`. The current destination and authored Git history must be checked independently before merging. This directory contains recovered file history and new implementation, not a fabricated original Git timeline.
+- `ashwood-steg-suite/steg-web/stegweb.py`: six historical modes, table conversions, subsequence search and demonstration.
+- `beloved-daemon-publishing-kit/sources/stegweb/legacy/stegweb-from-pdf.py`: recovered PDF source, including API prompt/response helpers.
+- `historical/stegweb_two_plains.py` and `historical/stegweb_two_plains_spec.yaml`: the Two Plains / Corridor Lamp contract, dated 2026-07-18.
+- `SKILL 2.pdf` and `README_stegweb.pdf`: historical UI and brand context. A Parseltongue credit inserted into the latter by an assistant was identified as an error in the archive and is excluded from project attribution.
 
-On September 10, 2026, Lily renamed the current app **Uniception**, reserving **steg.web** for the entire archive. This is a presentation rename, not a new codec version. Historical filenames, fonts, source headers, API-independent codec IDs and Markdown wire markers remain unchanged. The Spider Poem is retained in historical sources and belongs in the archive README, not as a new app identity.
+The original header names `https://github.com/missspelll/steg.web`. The current repository publishes recovered files and subsequent implementation work. Original example-bearing files and full conversations stay in the local archive.
 
-The new title uses the established house map from Lily's existing repositories: lowercase mathematical **bold serif vowels** and mathematical **sans-serif regular consonants**. This is an explicit presentation choice. The recovered `README_stegweb.pdf` has a plain system-sans title, not a Fraktur or script title; no newly styled title is claimed as recovered original typography.
+## The name and the lettering
 
-The interface now uses that house map for authored narrative and a small selection of synthetic Font Garden registers for headings. `lettering.js` vendors the complete 78-entry reviewed catalog with original source hashes and interpretation labels. It is presentation code, not a new message channel. Textarea/input values, byte framing, code, receipts and recovered variants are excluded; plain accessibility labels remain available. Static copies disable provider actions and key entry. Only root HTML served by `python3 server.py --port 8768` receives the local-adapter marker; this is a UI capability hint, not an authentication secret, and the server's origin protections still apply. No network probe or automatic provider call is added.
+On September 10, 2026, Lily renamed the application **Uniception**, reserving **steg.web** for the whole archive. Historical filenames, font mappings, codec IDs and Markdown wire markers remain unchanged. The Spider Poem lives in the archive README.
 
-The public Snowline link now opens a separately named synthetic demonstration, not the original artwork. The original index, pre-hardening artwork and prior integration paperwork remain untouched locally and are excluded from the public tree. Neither local server serves those private files. Both the dedicated adapter and a static site can run the new variant with external same-origin scripts and styles; no inline-policy exception remains.
+The current title and narrative use Lily’s established house map: lowercase mathematical **bold serif vowels** and **sans-serif regular consonants**. Selected Font Garden registers dress the headings. The 78-entry catalog in `lettering.js` retains original source hashes and recipe attribution. Interface lettering leaves inputs, byte framing, code, receipts and cipher specimens untouched.
 
-New decisions in this release: strict position and carrier validation; JavaScript/browser core; SWB2 bytes; explicit Markdown regions; loopback BYOK server; model interpretation separation; UI, tests and the README’s lamp passage. The cleared Corridor Lamp Python/spec fixtures remain historical references with their existing boundaries. Other original Python sources are preserved locally rather than published with private examples.
+## Branches of the web
 
-Historical documents overstate universal visual invisibility and impossibility of sanitization. Actual appearance depends on fonts and rendering; compatibility normalization can erase the channel. Those claims are not current guarantees.
+The Nekomata thread preserves eight lines, fourteen selected positions and three exact source font arrays. It uses the existing `v1`, `chaos_noodle` and `aesthetic` modes, verified against the local codec. The source credits Lily of Ashwood / “woven by the nekomata.” The page extracts its message from the actual encoded poem.
 
-The newly supplied six-mode React UI has been recovered and reviewed locally. Its status as the earliest original implementation is not established; chronology and the complete raw development conversation remain unresolved. No live provider credentials/calls or target-interface copy/paste experiments were used in the current automated tests.
+Snowline/Mirrorfall joined Uniception on 2026-09-10 at Lily’s request. It is the differential-font branch: `SN` version 1, with ordinary and center-out traversals. Its 1.0.1 recovery functions retain their earlier BOM/surrogate fixes; the browser module wrapper is the only extraction change. The public lantern poem and interface were newly composed for this format. Original artwork stays local. The [scoped manifest](variants/snowline-mirrorfall/public-source.json) records the public runtime files.
 
-The separately supplied Nekomata thread specimen retains its eight fictional lines, fourteen selected positions and three exact source font arrays. It uses the existing `v1`, `chaos_noodle` and `aesthetic` legacy modes, verified against the current codec. Its source credits Lily of Ashwood / “woven by the nekomata”; no unverified model or session attribution is added. It does not include the private family-origin handoff. New UI code reads the actual encoded text instead of returning a fixed answer.
+## Current implementation
 
-Snowline/Mirrorfall was folded into Uniception on 2026-09-10 at Lily's request, as a distinct variant rather than a seventh selected-letter mode. The prior exact six-file integration and original checkout remain locally preserved. For the clean public tree, `variants/snowline-mirrorfall/core.js` extracts the existing 1.0.1 recovery functions without changing them; only the module export wrapper changes. The packet remains `SN` version 1, including both traversals and earlier BOM/surrogate fixes. `specimen.js` and `demo.html` are newly composed synthetic demonstration material, explicitly not the historical artwork. The new `public-source.json` hashes only the five public runtime files. It does not pretend to contain or republish the original source history.
+The browser core, strict position checks, `SWB2` byte frame, explicit Markdown regions, loopback BYOK adapter, model-interpretation view, tests and README lamp passage belong to the current implementation. The recovered six-mode React UI is preserved locally as a further source artifact.
+
+Static pages weave and decode locally. The loopback adapter enables explicit provider requests with origin checks; keys remain in memory. Offline fixtures exercise provider request formats and error handling.
+
+Font choice carries data in the Unicode string. Preserve that string in transport: compatibility normalization erases the font channel. Rendering fonts determine how close the visible letterforms appear. The byte-frame checksum detects accidental corruption, not deliberate forgery.
+
+## License
+
+Released under the [MIT License](LICENSE), copyright © 2026 lilyofashwood. The recovered author credits and source hashes remain attached to their material.

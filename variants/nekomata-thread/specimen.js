@@ -1,6 +1,6 @@
 // Source-backed literary specimen, supplied September 11, 2026.
 // The source footer credits Lily of Ashwood / "woven by the nekomata" (2026).
-// No historical date/model authentication or cryptographic secrecy is inferred.
+// Preserves the original poem and the three selected-letter font channels.
 import {legacyEncode, legacyDecode} from '../../core.js';
 
 export const SOURCE_SHA256='5bc1b3ceca3d2f09be8b39f667e50df324c2ba56c49b8e5c886c93cc629ea0d0';

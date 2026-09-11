@@ -6,9 +6,9 @@
   "derivation": "Codec functions extracted unchanged from the existing 1.0.1 recovery; module.exports changed to an ES-module export. New synthetic carrier, payload and interface, not recovered artwork.",
   "sha256": {
     "core.js": "03ad656e2e341cbcb0ff3f6474e197662b013c09fe8c58106e2854c5b7ba9e34",
-    "specimen.js": "63021aa6088a8c3829c1b1a0f65bdb8a55037b0ee1a8673b02049947835b6a0f",
-    "demo.html": "7415c1f11c76812af99e2c64ffcdda4304be1dd4a21f03e13ce586ccb84b1df2",
-    "demo.js": "221ea5c72193fc74641bdd9d44f0dcfd7d3047e609e86a51459384b1f9572433",
+    "specimen.js": "48541e55c09c7fb25faf362e642f5ef3d8b0e77b416cb126616c2a85dc825361",
+    "demo.html": "48a1c412516f9e661c6c52f931e1b4bdf9dcaa120b5ac9d8b46cfc0577147693",
+    "demo.js": "9a9fe54df6a361f59b39f92665bde258354024a37340e1514997a077ac58fef9",
     "demo.css": "5d3b49d330a3be8f5ab578af9575d9a52c7bca213cd9e598342172626e414dc3"
   }
 }

@@ -14,7 +14,7 @@ function recover(){
   const result=mode().decode($('encoded').value);
   $('recovered').textContent=result.payload;
   $('receipt').textContent=JSON.stringify({codec:'SN v1',traversal:$('traversal').value,...result},null,2);
-  status('Frame recovered · payload CRC16 valid. Carrier wording and filler are not authenticated.');
+  status('Frame recovered · payload CRC16 valid.');
   return result;
 }
 function weave(){

@@ -3,7 +3,7 @@
 export const specimen = Object.freeze({
   id: 'snowline-public-lantern-1',
   codec: 'SN v1',
-  authorship: 'New demonstration text composed by Codex for Lily of Ashwood; not a historical source claim.',
+  authorship: 'Lantern demonstration text composed by Codex for Lily of Ashwood, September 2026.',
   payload: 'a small light returns',
   carrier: [
     'A lantern keeps a circle on the table.',

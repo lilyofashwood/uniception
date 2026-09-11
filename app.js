@@ -29,7 +29,7 @@ async function ask(prompt){
   const response=await fetch('/api/compose',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({config:c,prompt}),signal:AbortSignal.timeout(100000)});
   const result=await response.json();if(!response.ok)throw new Error(result.error||'Provider request failed.');return result.candidate;
 }
-async function modelAction(fn){if(!localAdapter){show('Static preview: start the local adapter for model access.','model-result');return;}for(const id of ['compose','interpret'])$(id).disabled=true;show('Waiting for one provider call…','model-result');try{await fn();}catch(e){show('Unverified: '+e.message,'model-result');}finally{for(const id of ['compose','interpret'])$(id).disabled=!localAdapter;}}
+async function modelAction(fn){if(!localAdapter){show('Static preview: start the local adapter for model access.','model-result');return;}for(const id of ['compose','interpret'])$(id).disabled=true;show('Waiting for one provider call…','model-result');try{await fn();}catch(e){show('Request stopped: '+e.message,'model-result');}finally{for(const id of ['compose','interpret'])$(id).disabled=!localAdapter;}}
 $('compose').onclick=()=>modelAction(async()=>{
   const bytes=$('format').value==='bytes-v2';
   const payload=$('payload').value,mode=$('mode').value;
@@ -43,6 +43,6 @@ $('compose').onclick=()=>modelAction(async()=>{
 $('interpret').onclick=()=>modelAction(async()=>{
   const exact=decode();show(exact);
   const interpretation=await ask('Interpret these locally recovered Uniception readings (historical StegWeb formats) as literature. Do not change the exact recovered data. Return JSON {"interpretation":"...","uncertainties":["..."]}.\nDATA '+JSON.stringify(exact));
-  show({status:'model interpretation, not exact recovery',interpretation},'model-result');
+  show({status:'literary interpretation beside exact local recovery',interpretation},'model-result');
 });
 letterInterface(document);
