@@ -10,6 +10,8 @@
 
 <a id="open-the-workshop"></a>
 
+[𝐨𝗉𝐞𝗇 𝗍𝗁𝐞 𝗅𝐢𝗏𝐞 𝗐𝐨𝗋𝗄𝗌𝗁𝐨𝗉](https://lilyofashwood.github.io/uniception/) · [𝗍𝗁𝐞 𝗐𝗁𝐨𝗅𝐞 𝗀𝐚𝗋𝖽𝐞𝗇](https://lilyofashwood.github.io/steg.web/)
+
 ## 𝐨𝗉𝐞𝗇 𝗍𝗁𝐞 𝗐𝐨𝗋𝗄𝗌𝗁𝐨𝗉
 
 ```sh
