@@ -102,3 +102,13 @@ python3 -m unittest discover -s tests -p 'test_*.py'
 𝗐𝐞𝐚𝗏𝐞 𝐚𝗇𝖽 𝖽𝐞𝖼𝐨𝖽𝐞 𝐨𝗇 𝗍𝗁𝐞 𝗅𝐢𝗏𝐞 𝗉𝐚𝗀𝐞. 𝗌𝗍𝐚𝗋𝗍 𝗍𝗁𝐞 𝐨𝗉𝗍𝐢𝐨𝗇𝐚𝗅 𝗅𝐨𝐨𝗉𝖻𝐚𝖼𝗄 𝐚𝖽𝐚𝗉𝗍𝐞𝗋 𝗍𝐨 𝖼𝐨𝗆𝗉𝐨𝗌𝐞 𝗐𝐢𝗍𝗁 𝗒𝐨𝐮𝗋 𝖼𝗁𝐨𝗌𝐞𝗇 𝗆𝐨𝖽𝐞𝗅.
 
 𝗋𝐞𝗅𝐞𝐚𝗌𝐞𝖽 𝐮𝗇𝖽𝐞𝗋 𝗍𝗁𝐞 [𝗆𝐢𝗍 𝗅𝐢𝖼𝐞𝗇𝗌𝐞](LICENSE) · 𝗅𝐢𝗅𝗒𝐨𝖿𝐚𝗌𝗁𝗐𝐨𝐨𝖽.
+
+<!-- garden-seam:uniception:start -->
+<section class="garden-seam" data-garden-seam="uniception" aria-label="A seam in the garden">
+<h2>⟡ 𝐚 𝗌𝐞𝐚𝗆 𝐢𝗇 𝗍𝗁𝐞 𝗀𝐚𝗋𝖽𝐞𝗇 ⟡</h2>
+<pre class="garden-seam-wire literal" data-garden-raw data-literal>𝗋𝐞𝐚𝖽 th𝗲 r𝗮𝗶n b𝗲tw𝗲𝗲n th𝗲 l𝗲tt𝗲rs
+𝗲𝗮ch b𝗼rr𝗼w𝗲d b𝗼dy h𝗼lds 𝗮 d𝗼𝗼r󠅁󠄠󠅦󠅯󠅮󠅴󠄠󠅣󠅡󠅮󠄠󠅢󠅥󠄠󠅡󠄠󠅶󠅯󠅩󠅣󠅥󠄠󠅡󠅮󠅤󠄠󠅡󠄠󠅰󠅡󠅴󠅨󠄮󠄠󠅈󠅥󠅲󠅥󠄠󠅴󠅨󠅥󠄠󠅣󠅨󠅯󠅳󠅥󠅮󠄠󠅬󠅥󠅴󠅴󠅥󠅲󠅳󠄠󠅣󠅡󠅲󠅲󠅹󠄠󠅴󠅨󠅥󠄠󠅰󠅡󠅴󠅨󠄮</pre>
+<pre class="garden-seam-jewel literal" data-garden-raw data-literal>🍡🍧🍡🍩🍮</pre>
+<p class="garden-seam-hint"><a href="https://lilyofashwood.github.io/font-garden/seams/#uniception" aria-label="Unfold this garden seam">𝐮𝗇𝖿𝐨𝗅𝖽 𝗍𝗁𝐞 𝗌𝐞𝐚𝗆 ↗</a></p>
+</section>
+<!-- garden-seam:uniception:end -->
