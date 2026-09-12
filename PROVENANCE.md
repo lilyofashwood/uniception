@@ -7,7 +7,7 @@ Lily of Ashwood designed StegWeb’s system, six font modes and experiments. Cla
 - `ashwood-steg-suite/steg-web/stegweb.py`: six historical modes, table conversions, subsequence search and demonstration.
 - `beloved-daemon-publishing-kit/sources/stegweb/legacy/stegweb-from-pdf.py`: recovered PDF source, including API prompt/response helpers.
 - `historical/stegweb_two_plains.py` and `historical/stegweb_two_plains_spec.yaml`: the Two Plains / Corridor Lamp contract, dated 2026-07-18.
-- `SKILL 2.pdf` and `README_stegweb.pdf`: historical UI and brand context. A Parseltongue credit inserted into the latter by an assistant was identified as an error in the archive and is excluded from project attribution.
+- `SKILL 2.pdf` and `README_stegweb.pdf`: historical UI and brand context.
 
 The original header names `https://github.com/missspelll/steg.web`. The current repository publishes recovered files and subsequent implementation work. Original example-bearing files and full conversations stay in the local archive.
 
